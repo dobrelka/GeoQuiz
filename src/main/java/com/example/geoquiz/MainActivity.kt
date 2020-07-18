@@ -50,10 +50,13 @@ private var currentIndex = 0
 
         nextButton.setOnClickListener {
             currentIndex = (currentIndex + 1) % questionBank.size
-            val questionTextResId = questionBank[currentIndex].textResId
-            questionTextView.setText(questionTextResId)
+            updateQuestion()
         }
 
+        updateQuestion()
+    }
+
+    private fun updateQuestion() {
         val questionTextResId = questionBank[currentIndex].textResId
         questionTextView.setText(questionTextResId)
     }
